@@ -2,16 +2,16 @@ import { Star } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'John Doe',
+    name: 'Abela',
     role: 'CEO, TechCorp',
     content: 'This platform has revolutionized the way we work. It\'s intuitive, powerful, and has greatly improved our productivity.',
-    avatar: '/placeholder.svg?height=100&width=100'
+    avatar: '/man.jpg'
   },
   {
-    name: 'Jane Smith',
+    name: 'Blen',
     role: 'Designer, CreativeCo',
     content: 'I\'ve tried many similar tools, but this one stands out. The features are exactly what I need, and the support is outstanding.',
-    avatar: '/placeholder.svg?height=100&width=100'
+    avatar: '/sis.jpg'
   }
 ]
 

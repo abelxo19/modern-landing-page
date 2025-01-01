@@ -6,7 +6,7 @@ import Footer from './components/footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Modern Landing Page',
+  title: 'Modern Landing Page with Nextjs',
   description: 'Transform Your Ideas into Reality',
 }
 
