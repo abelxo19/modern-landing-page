@@ -2,7 +2,7 @@ import { Star } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'Abela',
+    name: 'Abel',
     role: 'CEO, TechCorp',
     content: 'This platform has revolutionized the way we work. It\'s intuitive, powerful, and has greatly improved our productivity.',
     avatar: '/man.jpg'
