@@ -1,26 +1,43 @@
+"use client"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-r from-purple-600 to-blue-600 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Transform Your Ideas into Reality</h1>
-            <p className="text-xl mb-8">Our platform empowers you to bring your vision to life with powerful tools and expert guidance.</p>
-            <Button size="lg" variant="secondary">Start Free Trial</Button>
-          </div>
-          <div className="relative">
-            <img src="/placeholder.svg?height=400&width=600" alt="Hero Image" className="rounded-lg shadow-xl" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-purple-600 to-blue-600 opacity-20 rounded-lg"></div>
-          </div>
+    <section className="relative bg-gray-50 text-gray-800 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight text-[#232e44]">
+              Transform Your <span className="text-white bg-[#232e44] px-2">Ideas</span> into Reality
+            </h1>
+            <p className="text-lg mb-8 text-gray-600">
+              Our platform empowers you to bring your vision to life with powerful tools and expert guidance.
+            </p>
+            <Button size="lg" className="bg-[#232e44] text-white transition-colors">
+              Start Free Trial
+            </Button>
+          </motion.div>
+          <motion.div
+            className="relative max-w-md mx-auto"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            <Image src="/placeholder.svg" alt="Hero Image" width={400} height={300} className="rounded-lg shadow-xl" />
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-tr from-indigo-200 to-purple-200 mix-blend-multiply rounded-lg"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.7 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            ></motion.div>
+          </motion.div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path fill="#ffffff" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-        </svg>
-      </div>
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 rounded-bl-full"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-purple-100 to-transparent opacity-50 rounded-tr-full"></div>
     </section>
   )
 }
