@@ -57,11 +57,11 @@ export default function Testimonials() {
               whileHover={{ scale: 1.03 }}
             >
               <motion.div
-                className="absolute top-8 left-8 w-12 h-12 bg-yellow-400/10 rounded-full flex items-center justify-center"
+                className="absolute top-8 left-8 w-12 h-12 bg-white rounded-full flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
               >
-                <Quote className="w-5 h-8 fill-[#232e44] text-[#232e44]" />
+                <Quote className="w-4 h-7 fill-[#232e44] text-[#232e44]" />
               </motion.div>
               <div className="pt-12">
                 <p className="text-gray-700 mb-8 text-lg">{testimonial.content}</p>
