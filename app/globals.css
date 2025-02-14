@@ -80,3 +80,13 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600;
 }
 
+.neon {
+  position: relative;
+  box-shadow: 0 0 5px #232e44, 0 0 10px #232e44, 0 0 20px #232e44, 0 0 40px #232e44;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.neon:hover {
+  box-shadow: 0 0 10px #232e44, 0 0 20px #232e44, 0 0 30px #232e44, 0 0 50px #232e44;
+}
+

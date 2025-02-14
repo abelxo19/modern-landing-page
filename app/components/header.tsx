@@ -15,10 +15,10 @@ export default function Header() {
             <Link href="/"><Image src='/logo_lp.png' alt='Logo' width={50} height={50} /></Link>
           </div>
           <nav className="hidden md:flex space-x-4">
-            <Link href="/" className="text-gray-600 hover:text-[#232e44]">Home</Link>
-            <Link href="#about" className="text-gray-600 hover:text-[#232e44]">About</Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-[#232e44]">Pricing</Link>
-            <Link href="#contact" className="text-gray-600 hover:text-[#232e44]">Contact</Link>
+            <Link href="/" className="text-gray-600 hover:text-slate-900">Home</Link>
+            <Link href="#about" className="text-gray-600 hover:text-slate-900">About</Link>
+            <Link href="#pricing" className="text-gray-600 hover:text-slate-900">Pricing</Link>
+            <Link href="#contact" className="text-gray-600 hover:text-slate-900">Contact</Link>
           </nav>
           <Button className='bg-[#232e44]'>Get Started</Button>
         </div>
