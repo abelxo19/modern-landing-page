@@ -24,7 +24,11 @@ export default function Pricing() {
   return (
     <section className="py-20" id="pricing">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">Simple, Transparent Pricing</h2>
+       <div className="flex justify-center mb-12">
+         <span className="text-3xl font-bold text-center text-white px-2 py-1 bg-[#232e44]">
+            Pricing
+         </span>
+       </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
             <div key={index} className={`bg-white rounded-lg shadow-md p-8 ${plan.popular ? 'border-2 border-primary' : ''}`}>

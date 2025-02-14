@@ -2,6 +2,8 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import heroImages from "@/public/hero-2.jpg"
+
 
 export default function Hero() {
   return (
@@ -26,7 +28,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
           >
-            <Image src="/placeholder.svg" alt="Hero Image" width={400} height={300} className="rounded-lg shadow-xl" />
+            <Image src={heroImages} alt="Hero Image" width={500} height={600} className="rounded-lg shadow-xl" />
             <motion.div
               className="absolute inset-0 bg-gradient-to-tr from-indigo-200 to-purple-200 mix-blend-multiply rounded-lg"
               initial={{ opacity: 0 }}
