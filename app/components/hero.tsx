@@ -2,8 +2,8 @@
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import heroImages from "@/public/hero-2.jpg"
-
+import heroImages from "@/public/hero-2.jpg" 
+import heroIcon from "@/public/heron-i.png"
 
 export default function Hero() {
   return (
@@ -21,25 +21,58 @@ export default function Hero() {
               Start Free Trial
             </Button>
           </motion.div>
-          <motion.div
-            className="relative max-w-md mx-auto"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <Image src={heroImages} alt="Hero Image" width={500} height={600} className="rounded-lg shadow-xl" />
+          <div className="relative max-w-md mx-auto">
+            {/* Animated lightbulb */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-tr from-indigo-200 to-purple-200 mix-blend-multiply rounded-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.7 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            ></motion.div>
-          </motion.div>
+              className="absolute z-20 left-1/2 transform -translate-x-1/2"
+              style={{
+                top: "-25px",
+                transformOrigin: "50% 0%",
+              }}
+              animate={{
+                rotate: [0, 15, 0, -15, 0],
+              }}
+              transition={{
+                duration: 4,
+                ease: "easeInOut",
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              }}
+            >
+              <Image
+                src={heroIcon}
+                alt="Light Bulb"
+                width={50}
+                height={60}
+              />
+            </motion.div>
+
+            {/* Hero image container */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <Image
+                src={heroImages}
+                alt="Hero Image"
+                width={500}
+                height={600}
+                className="rounded-lg shadow-xl"
+              />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-tr from-indigo-200 to-purple-200 mix-blend-multiply rounded-lg"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.7 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 rounded-bl-full"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-purple-100 to-transparent opacity-50 rounded-tr-full"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-indigo-100 to-transparent opacity-50 rounded-bl-full" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-purple-100 to-transparent opacity-50 rounded-tr-full" />
     </section>
   )
 }
