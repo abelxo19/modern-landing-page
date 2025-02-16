@@ -17,7 +17,7 @@ export default function Hero() {
             <p className="text-lg mb-8 text-gray-600">
               Our platform empowers you to bring your <span className="wellcome">vision</span> to life with powerful tools and expert guidance.
             </p>
-            <Button size="lg" className="bg-[#232e44] text-white transition-colors">
+            <Button size="lg" className="bg-[#232e44] text-white">
               Start Free Trial
             </Button>
           </motion.div>

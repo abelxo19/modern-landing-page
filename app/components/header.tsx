@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Button } from "@/components/ui/button"
 import Image from 'next/image'
+import ShinyButton from '@/app/components/shiny_button'
 
 export default function Header() {
   
@@ -20,7 +20,7 @@ export default function Header() {
             <Link href="#pricing" className="text-gray-600 hover:text-slate-900">Pricing</Link>
             <Link href="#contact" className="text-gray-600 hover:text-slate-900">Contact</Link>
           </nav>
-          <Button className='bg-[#232e44]'>Get Started</Button>
+          <ShinyButton text="Get Started"></ShinyButton>
         </div>
       </div>
     </header>
