@@ -92,7 +92,7 @@
 
 @layer utilities {
   .wellcome{
-   @apply relative text-black text-base uppercase font-medium font-sans
+   @apply relative text-gray-600 text-base uppercase font-medium font-sans
   }
   .wellcome::before{
    @apply content-['vision']
