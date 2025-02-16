@@ -90,3 +90,13 @@
   box-shadow: 0 0 10px #232e44, 0 0 20px #232e44, 0 0 30px #232e44, 0 0 50px #232e44;
 }
 
+@layer utilities {
+  .wellcome{
+   @apply relative text-black text-base uppercase font-medium font-sans
+  }
+  .wellcome::before{
+   @apply content-['vision']
+   absolute text-[#232e44] border-r-2 border-[#232e44] 
+   top-0 left-0 w-0 h-[100%] overflow-hidden animate-animate
+  }
+}
