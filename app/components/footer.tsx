@@ -15,7 +15,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-gray-600">Email: abelaatkelet@gmail.com</li>
+              <li className="text-gray-600">Email: <Link href='abelaatkelet@gmail.com'>abelaatkelet@gmail.com</Link></li>
               <li className="text-gray-600">Phone: +251993861744</li>
               <li className="text-gray-600">Address: 123,Addis Ababa, Ethiopia</li>
             </ul>
