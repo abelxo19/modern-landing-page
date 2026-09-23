@@ -55,6 +55,8 @@ lib/
 
 ## Checks
 
+The Next.js, React, and React DOM versions are pinned and reproduced by `package-lock.json`. A targeted npm override makes Next.js use the patched PostCSS version declared in this project; recheck that override when upgrading Next.js. Run `npm audit` when updating dependencies as well as the checks below.
+
 ```bash
 npm run lint
 npm run typecheck
