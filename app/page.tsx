@@ -1,7 +1,7 @@
 import Hero from './components/hero'
 import Features from './components/features'
+import Workflow from './components/workflow'
 import Pricing from './components/pricing'
-import Testimonials from './components/testimonials'
 import CTA from './components/cta'
 
 export default function Home() {
@@ -9,10 +9,9 @@ export default function Home() {
     <>
       <Hero />
       <Features />
+      <Workflow />
       <Pricing />
-      <Testimonials />
       <CTA />
     </>
   )
 }
-

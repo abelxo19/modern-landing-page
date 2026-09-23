@@ -1,56 +1,49 @@
-import { Check } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-
-const plans = [
-  {
-    name: 'Basic',
-    price: '$9',
-    features: ['1 User', '10 Projects', 'Basic Support', '1GB Storage']
-  },
-  {
-    name: 'Pro',
-    price: '$29',
-    features: ['5 Users', 'Unlimited Projects', 'Priority Support', '10GB Storage'],
-    popular: true
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    features: ['Unlimited Users', 'Unlimited Projects', 'Dedicated Support', 'Unlimited Storage']
-  }
-]
+import { ArrowUpRight, Check } from 'lucide-react'
+import { siteConfig } from '@/lib/site'
 
 export default function Pricing() {
   return (
-    <section className="py-20" id="pricing">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-       <div className="flex justify-center mb-12">
-         <span className="text-3xl font-bold text-center text-white px-2 py-1 bg-[#232e44]">
-            Pricing
-         </span>
-       </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div key={index} className={`bg-white rounded-lg shadow-md p-8 ${plan.popular ? 'border-2 border-primary' : ''}`}>
-              {plan.popular && (
-                <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Most Popular</span>
-              )}
-              <h3 className="text-2xl font-bold mb-4">{plan.name}</h3>
-              <p className="text-4xl font-bold mb-6">{plan.price}<span className="text-xl text-gray-500">/month</span></p>
-              <ul className="mb-8 space-y-2">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center">
-                    <Check className="h-5 w-5 text-primary mr-2" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button className="w-full" variant={plan.popular ? "default" : "outline"}>Choose Plan</Button>
-            </div>
-          ))}
+    <section
+      className="access-section section-space page-width"
+      id="pricing"
+      aria-labelledby="access-heading"
+    >
+      <div className="access-intro">
+        <p className="eyebrow">OPEN TO EXPLORE</p>
+        <h2 id="access-heading">
+          A small preview.<br />
+          No big commitment.
+        </h2>
+        <p>
+          MAKEIT is a product concept, built as a portfolio demonstration. Get a feel
+          for the idea right here, without an account or a credit card.
+        </p>
+        <a className="text-link" href={siteConfig.repository}>
+          Take a look under the hood <ArrowUpRight size={16} aria-hidden="true" />
+        </a>
+      </div>
+      <div className="access-card">
+        <div className="access-card-heading">
+          <span className="pill">THE HANDS-ON VERSION</span>
+          <span className="access-price">Free to explore</span>
         </div>
+        <h3>Your next step starts here.</h3>
+        <ul>
+          <li>
+            <Check size={17} aria-hidden="true" /> Explore a sample project and its brief
+          </li>
+          <li>
+            <Check size={17} aria-hidden="true" /> Check off tasks and see your progress
+          </li>
+          <li>
+            <Check size={17} aria-hidden="true" /> Reset the board and try it again
+          </li>
+        </ul>
+        <a className="button" href="#demo">
+          Give MAKEIT a try <ArrowUpRight size={18} aria-hidden="true" />
+        </a>
+        <p className="access-note">Browser demo only. No saved projects or paid plans.</p>
       </div>
     </section>
   )
 }
-

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
@@ -56,21 +57,7 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)'
       },
-      animation: {
-        animate: 'animate 6s linear infinite',
-      },
-      keyframes: {
-        animate: {
-          '0%, 10%, 100%': { width: '0%' },
-          '70%, 80%, 90%': { width: '100%' },
-        },
-        animation: {
-          '0%': { transform: 'scale(0)', opacity: '1' },
-          '50%': { transform: 'scale(1.5)', opacity: '0.5' },
-          '100%': { transform: 'scale(3)', opacity: '0' },
-        },
-      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 } satisfies Config;

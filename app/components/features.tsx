@@ -1,117 +1,109 @@
-"use client"
-
-import { useEffect } from "react"
-import { Lightbulb, Zap, Shield } from "lucide-react"
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-
-const features = [
-  {
-    icon: Lightbulb,
-    title: "Innovative Solutions",
-    description: "Our cutting-edge technology provides innovative solutions to complex problems.",
-  },
-  {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Experience blazing fast performance with our optimized platform.",
-  },
-  {
-    icon: Shield,
-    title: "Secure & Reliable",
-    description: "Your data is safe with us. We prioritize security and reliability.",
-  },
-]
-
-const iconVariants = {
-  hidden: { opacity: 0, y: -20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-  hover: {
-    scale: 1.1,
-    rotate: [0, -10, 10, -10, 0],
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-      times: [0, 0.2, 0.5, 0.8, 1],
-      repeat: Number.POSITIVE_INFINITY,
-      repeatDelay: 1,
-    },
-  },
-}
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-}
+import { ArrowRight, Check, Circle, FileText, Flag, LayoutGrid } from 'lucide-react'
 
 export default function Features() {
-  const controls = useAnimation()
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible")
-    }
-  }, [controls, inView])
-
   return (
-    <section ref={ref} className="py-14 bg-gray-50" id="features">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          className="text-3xl font-bold text-center mb-12"
-          style={{ color: "#232e44" }}
-        >
-          <span className="text-white bg-[#232e44] px-2 py-1">Key</span> Features
-        </h2>
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-        >
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="bg-white rounded-lg shadow-md p-10 transition-all duration-300 hover:shadow-lg"
-              variants={itemVariants}
-            >
-              <motion.div variants={iconVariants} className="mb-4">
-                <feature.icon className="h-12 w-12 text-primary" />
-              </motion.div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+    <section
+      className="features-section section-space"
+      id="features"
+      aria-labelledby="features-heading"
+    >
+      <div className="page-width">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">A PLACE FOR YOUR PROCESS</p>
+            <h2 id="features-heading">
+              Everything you need.<br />
+              <span className="muted-heading">Space to make it yours.</span>
+            </h2>
+          </div>
+          <p>
+            From the first messy thought to the final little detail. A simple way to
+            see what matters and what comes next.
+          </p>
+        </div>
+        <div className="feature-grid">
+          <article className="feature-card">
+            <div className="feature-visual brief-visual" aria-hidden="true">
+              <div className="mini-note">
+                <span><FileText size={14} /> THE BIG LITTLE IDEA</span>
+                <strong>
+                  It starts with<br />
+                  <em>“what if?”</em>
+                </strong>
+                <div className="note-lines"><i /><i /></div>
+                <span className="note-pin" />
+              </div>
+            </div>
+            <div className="feature-copy">
+              <span className="feature-number">01 / GET IT OUT OF YOUR HEAD</span>
+              <h3>Give your idea a home.</h3>
+              <p>
+                Keep the purpose close. A short project brief turns a scattered thought
+                into something you can work toward.
+              </p>
+              <a className="text-link" href="#demo">
+                Meet your workspace <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </article>
+          <article className="feature-card">
+            <div className="feature-visual steps-visual" aria-hidden="true">
+              <div className="mini-task">
+                <Check size={15} />
+                <span>Find the starting point</span>
+              </div>
+              <div className="mini-task current">
+                <Circle size={15} />
+                <span>Make a little progress</span>
+                <LayoutGrid size={14} />
+              </div>
+              <div className="mini-task">
+                <Circle size={15} />
+                <span>Keep the good things going</span>
+              </div>
+            </div>
+            <div className="feature-copy">
+              <span className="feature-number">02 / FIND YOUR NEXT STEP</span>
+              <h3>Make the big feel doable.</h3>
+              <p>
+                Break the project into clear, small tasks. Shape it, build it, share
+                it—one manageable step at a time.
+              </p>
+              <a className="text-link" href="#how-it-works">
+                Find your flow <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </article>
+          <article className="feature-card">
+            <div className="feature-visual progress-visual" aria-hidden="true">
+              <div className="progress-orbit">
+                <svg viewBox="0 0 120 120">
+                  <circle cx="60" cy="60" r="49" />
+                  <circle className="orbit-fill" cx="60" cy="60" r="49" />
+                </svg>
+                <span>
+                  <Flag size={23} />
+                  <strong>Getting there.</strong>
+                </span>
+              </div>
+              <span className="progress-sticker">
+                <Check size={12} /> Another step forward
+              </span>
+            </div>
+            <div className="feature-copy">
+              <span className="feature-number">03 / SEE HOW FAR YOU’VE COME</span>
+              <h3>Notice the small wins.</h3>
+              <p>
+                Check things off and watch your progress grow. A little momentum goes
+                a long way when you’re making something new.
+              </p>
+              <a className="text-link" href="#demo">
+                Try checking a task <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
   )
 }
-
